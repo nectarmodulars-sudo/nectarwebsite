@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nectar Modular Kitchen & Furniture | Premium Home Interiors in Pune</title>
+<meta name="description" content="Transform your home with Nectar's custom modular kitchens, wardrobes, and complete home interiors. Factory-direct pricing. Two showrooms in Pune – Bhosari & Kharadi."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #faf8f4;
+    --warm-white: #ffffff;
+    --charcoal: #1c1c1c;
+    --charcoal-soft: #2d2d2d;
+    --wood: #c4956a;
+    --wood-light: #e8c9a0;
+    --wood-pale: #f5ede0;
+    --gold: #b8962e;
+    --gold-light: #d4af6a;
+    --gold-pale: #faf3e0;
+    --text-primary: #1c1c1c;
+    --text-secondary: #555;
+    --text-light: #888;
+    --border: #e8e0d4;
+    --shadow: rgba(0,0,0,0.08);
+    --shadow-deep: rgba(0,0,0,0.18);
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: var(--font-body); background: var(--cream); color: var(--text-primary); overflow-x: hidden; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--wood); border-radius: 3px; }
+
+  /* ─── UTILITIES ─── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--wood); }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-top: 14px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 3px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s var(--transition);
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--charcoal);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--charcoal-soft); transform: translateY(-2px); box-shadow: 0 8px 24px var(--shadow-deep); }
+  .btn-gold {
+    background: var(--gold);
+    color: #fff;
+  }
+  .btn-gold:hover { background: #9e7d22; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,150,46,0.35); }
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    border: 1.5px solid var(--charcoal);
+  }
+  .btn-outline:hover { background: var(--charcoal); color: #fff; }
+  .btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.7);
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+  .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+  }
+  .btn-whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+
+  /* ─── FADE IN ANIMATION ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+  .fade-up:nth-child(5) { transition-delay: 0.4s; }
+  .fade-up:nth-child(6) { transition-delay: 0.5s; }
+  .fade-up:nth-child(7) { transition-delay: 0.6s; }
+
+  /* ─── NAVBAR ─── */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 18px 0;
+    transition: all 0.4s var(--transition);
+  }
+  .navbar.scrolled {
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
+    padding: 12px 0;
+    box-shadow: 0 2px 20px var(--shadow);
+  }
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .logo-main {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: -0.5px;
+  }
+  .logo-sub {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .navbar:not(.scrolled) .logo-main { color: #fff; }
+  .navbar:not(.scrolled) .logo-sub { color: var(--gold-light); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: var(--charcoal);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .navbar:not(.scrolled) .nav-links a { color: rgba(255,255,255,0.9); }
+  .nav-cta { margin-left: 8px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); transition: all 0.3s; }
+  .navbar:not(.scrolled) .hamburger span { background: #fff; }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--charcoal);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--font-display); font-size: 2rem; color: #fff; }
+  .mobile-close { position: absolute; top: 24px; right: 24px; font-size: 2rem; color: #fff; cursor: pointer; background: none; border: none; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    animation: heroZoom 12s ease-out forwards;
+  }
+  @keyframes heroZoom { to { transform: scale(1); } }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(18,18,18,0.72) 0%, rgba(18,18,18,0.35) 60%, rgba(18,18,18,0.1) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    padding-top: 80px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 7px 16px;
+    border-radius: 40px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 28px;
+    animation: fadeInDown 0.8s var(--transition) both;
+  }
+  @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+    max-width: 680px;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.9s 0.2s var(--transition) both;
+  }
+  .hero-title em { font-style: italic; color: var(--wood-light); }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 36px;
+    animation: fadeInUp 0.9s 0.35s var(--transition) both;
+  }
+  .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    animation: fadeInUp 0.9s 0.5s var(--transition) both;
+  }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-stats {
+    position: absolute;
+    bottom: 48px;
+    left: 24px;
+    right: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    z-index: 2;
+    animation: fadeInUp 0.9s 0.7s var(--transition) both;
+  }
+  .hero-stat { color: #fff; }
+  .hero-stat strong { display: block; font-family: var(--font-display); font-size: 2rem; font-weight: 500; line-height: 1; }
+  .hero-stat span { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-top: 4px; display: block; }
+  .hero-stat + .hero-stat { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 40px; }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    background: var(--charcoal);
+    padding: 22px 0;
+    overflow: hidden;
+  }
+  .trust-scroll {
+    display: flex;
+    gap: 60px;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+  .trust-scroll:hover { animation-play-state: paused; }
+  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .trust-item .dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+  /* ─── SERVICES ─── */
+  .services { padding: 100px 0; background: var(--cream); }
+  .services-header { margin-bottom: 56px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 2px 16px var(--shadow);
+    transition: transform 0.4s var(--transition), box-shadow 0.4s var(--transition);
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px var(--shadow-deep); }
+  .service-card-img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+  .service-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--transition);
+  }
+  .service-card:hover .service-card-img img { transform: scale(1.08); }
+  .service-card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(255,255,255,0.92);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .service-card-body { padding: 22px 24px 24px; }
+  .service-card-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+  .service-card-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+  .service-card-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .service-card-link { gap: 10px; }
+
+  /* ─── WHY US ─── */
+  .why-us { padding: 100px 0; background: #fff; }
+  .why-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .why-us-img-wrap {
+    position: relative;
+  }
+  .why-us-img-main {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .why-us-img-accent {
+    position: absolute;
+    bottom: -32px;
+    right: -32px;
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 6px solid #fff;
+    box-shadow: 0 8px 32px var(--shadow-deep);
+  }
+  .why-us-badge {
+    position: absolute;
+    top: 32px;
+    left: -24px;
+    background: var(--charcoal);
+    color: #fff;
+    padding: 20px 24px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 8px 24px var(--shadow-deep);
+  }
+  .why-us-badge strong { display: block; font-family: var(--font-display); font-size: 2.2rem; color: var(--gold-light); line-height: 1; }
+  .why-us-badge span { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .why-features { margin-top: 36px; display: flex; flex-direction: column; gap: 20px; }
+  .why-feature { display: flex; gap: 16px; align-items: flex-start; }
+  .why-feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 3px;
+    background: var(--wood-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--wood);
+    font-size: 18px;
+  }
+  .why-feature-text strong { display: block; font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 3px; }
+  .why-feature-text p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ─── PORTFOLIO ─── */
+  .portfolio { padding: 100px 0; background: var(--cream); }
+  .portfolio-header { margin-bottom: 48px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .portfolio-item:nth-child(1) { grid-row: span 2; }
+  .portfolio-item:nth-child(4) { grid-column: span 2; }
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    object-fit: cover;
+    transition: transform 0.6s var(--transition);
+  }
+  .portfolio-item:nth-child(1) .portfolio-img { min-height: 500px; }
+  .portfolio-item:nth-child(4) .portfolio-img { min-height: 280px; }
+  .portfolio-item:hover .portfolio-img { transform: scale(1.06); }
+  .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+  .portfolio-label { color: #fff; }
+  .portfolio-label strong { display: block; font-family: var(--font-display); font-size: 1.15rem; }
+  .portfolio-label span { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); }
+
+  /* ─── PROCESS ─── */
+  .process { padding: 100px 0; background: var(--charcoal); }
+  .process .section-title { color: #fff; }
+  .process .section-label { color: var(--gold-light); }
+  .process .section-sub { color: rgba(255,255,255,0.6); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 64px;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .process-step {
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+  }
+  .process-step-num {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--charcoal-soft);
+    border: 1.5px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+  }
+  .process-step:hover .process-step-num { background: var(--gold); color: #fff; }
+  .process-step-title { font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: 500; }
+  .process-step-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { padding: 100px 0; background: #fff; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 52px;
+  }
+  .testimonial-card {
+    background: var(--cream);
+    border-radius: 4px;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .testimonial-card:hover { box-shadow: 0 12px 32px var(--shadow-deep); transform: translateY(-4px); }
+  .testimonial-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+  .testimonial-text { font-size: 14.5px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 14px; }
+  .testimonial-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--wood-light);
+  }
+  .testimonial-author-name { font-weight: 600; font-size: 14px; color: var(--charcoal); }
+  .testimonial-author-loc { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  /* ─── BEFORE AFTER ─── */
+  .before-after { padding: 100px 0; background: var(--cream); }
+  .before-after-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 52px;
+  }
+  .ba-item { position: relative; border-radius: 4px; overflow: hidden; }
+  .ba-img { width: 100%; height: 340px; object-fit: cover; }
+  .ba-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .ba-badge.before { background: rgba(0,0,0,0.7); color: rgba(255,255,255,0.8); }
+  .ba-badge.after { background: var(--gold); color: #fff; }
+  .ba-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+    color: #fff;
+  }
+  .ba-caption strong { font-family: var(--font-display); font-size: 1.1rem; display: block; }
+  .ba-caption span { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+  /* ─── INQUIRY FORM ─── */
+  .inquiry { padding: 100px 0; background: var(--wood-pale); }
+  .inquiry-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .inquiry-form {
+    background: #fff;
+    border-radius: 6px;
+    padding: 44px 40px;
+    box-shadow: 0 8px 40px var(--shadow-deep);
+  }
+  .form-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; margin-bottom: 28px; color: var(--charcoal); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); margin-bottom: 7px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--charcoal);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    outline: none;
+    resize: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--wood); background: #fff; }
+  .form-submit { width: 100%; padding: 15px; background: var(--charcoal); color: #fff; border: none; border-radius: 3px; font-family: var(--font-body); font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; transition: background 0.3s, transform 0.2s; margin-top: 4px; }
+  .form-submit:hover { background: var(--charcoal-soft); transform: translateY(-1px); }
+  .inquiry-info .section-sub { max-width: 100%; }
+  .inquiry-contacts { margin-top: 40px; display: flex; flex-direction: column; gap: 22px; }
+  .inquiry-contact { display: flex; gap: 16px; align-items: flex-start; }
+  .inquiry-contact-icon { width: 44px; height: 44px; border-radius: 3px; background: var(--charcoal); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .inquiry-contact-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--charcoal); margin-bottom: 3px; }
+  .inquiry-contact-text span { font-size: 13px; color: var(--text-secondary); }
+
+  /* ─── CTA BANNER ─── */
+  .cta-banner {
+    padding: 100px 0;
+    background-image: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+  .cta-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(18,18,18,0.78);
+  }
+  .cta-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-banner-title { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
+  .cta-banner-title em { font-style: italic; color: var(--wood-light); }
+  .cta-banner-sub { font-size: 1rem; color: rgba(255,255,255,0.72); margin-bottom: 40px; }
+  .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+  /* ─── FOOTER ─── */
+  .footer { background: #111; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 56px; }
+  .footer-logo-main { font-family: var(--font-display); font-size: 1.8rem; color: #fff; font-weight: 500; }
+  .footer-logo-sub { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-top: 2px; }
+  .footer-desc { margin-top: 14px; font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 280px; }
+  .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+  .footer-social a { width: 36px; height: 36px; border-radius: 3px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 14px; }
+  .footer-social a:hover { background: var(--gold); border-color: var(--gold); }
+  .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-branch { margin-bottom: 24px; }
+  .footer-branch strong { display: block; font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600; margin-bottom: 8px; }
+  .footer-branch p { font-size: 12.5px; line-height: 1.7; color: rgba(255,255,255,0.5); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.35); flex-wrap: wrap; gap: 12px; }
+
+  /* ─── WHATSAPP FLOAT ─── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulse 2.5s infinite;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.6); animation: none; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,0.75); } }
+  .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+  /* ─── SUCCESS MSG ─── */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 32px;
+    color: var(--charcoal);
+  }
+  .form-success .check { font-size: 3rem; margin-bottom: 12px; }
+  .form-success p { font-size: 15px; color: var(--text-secondary); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .why-us-grid { grid-template-columns: 1fr; }
+    .why-us-img-wrap { display: none; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-item:nth-child(1) { grid-row: auto; }
+    .portfolio-item:nth-child(4) { grid-column: auto; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .process-steps::before { display: none; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .inquiry-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero-stats { gap: 20px; flex-wrap: wrap; }
+    .hero-stat + .hero-stat { border-left: none; padding-left: 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .before-after-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .inquiry-form { padding: 32px 24px; }
+    .why-us-img-accent { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="logo">
+      <span class="logo-main">Nectar</span>
+      <span class="logo-sub">Modular Kitchen &amp; Furniture</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-gold nav-cta" style="font-size:12px;padding:11px 20px;">Free Consultation</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#portfolio" onclick="closeMobile()">Projects</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:+919876543210" class="btn btn-gold" style="margin-top:8px;">📞 Call Now</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Pune's Trusted Modular Furniture Brand</div>
+    <h1 class="hero-title">Transform Your Home Into a <em>Beautiful Living Space</em></h1>
+    <p class="hero-sub">Custom Modular Furniture &amp; Complete Home Interiors Designed for Modern Families in Pune</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-gold">📋 Book Free Design Consultation</a>
+      <a href="#portfolio" class="btn btn-outline-white">View Projects →</a>
+    </div>
+  </div>
+  <div class="hero-stats container">
+    <div class="hero-stat"><strong>2000+</strong><span>Happy Families</span></div>
+    <div class="hero-stat"><strong>8+</strong><span>Years Experience</span></div>
+    <div class="hero-stat"><strong>2</strong><span>Showrooms in Pune</span></div>
+    <div class="hero-stat"><strong>100%</strong><span>Customized</span></div>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<div class="trust-bar">
+  <div class="trust-scroll" id="trustScroll">
+    <div class="trust-item"><span class="dot"></span> Factory Direct Pricing</div>
+    <div class="trust-item"><span class="dot"></span> Fully Customized Designs</div>
+    <div class="trust-item"><span class="dot"></span> Premium Quality Materials</div>
+    <div class="trust-item"><span class="dot"></span> On-Time Delivery Guaranteed</div>
+    <div class="trust-item"><span class="dot"></span> Professional Installation</div>
+    <div class="trust-item"><span class="dot"></span> 2000+ Happy Customers</div>
+    <div class="trust-item"><span class="dot"></span> 5-Year Warranty</div>
+    <div class="trust-item"><span class="dot"></span> Free 3D Design</div>
+    <div class="trust-item"><span class="dot"></span> Factory Direct Pricing</div>
+    <div class="trust-item"><span class="dot"></span> Fully Customized Designs</div>
+    <div class="trust-item"><span class="dot"></span> Premium Quality Materials</div>
+    <div class="trust-item"><span class="dot"></span> On-Time Delivery Guaranteed</div>
+    <div class="trust-item"><span class="dot"></span> Professional Installation</div>
+    <div class="trust-item"><span class="dot"></span> 2000+ Happy Customers</div>
+    <div class="trust-item"><span class="dot"></span> 5-Year Warranty</div>
+    <div class="trust-item"><span class="dot"></span> Free 3D Design</div>
+  </div>
+</div>
+
+<!-- ─── SERVICES ─── -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <span class="section-label fade-up">What We Create</span>
+      <h2 class="section-title fade-up">Furniture That Fits <em>Your Life</em></h2>
+      <p class="section-sub fade-up">From a single modular kitchen to a complete home interior — every piece is designed, manufactured, and installed by our expert team.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-card-img">
+          <span class="service-card-tag">Most Popular</span>
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Modular Kitchen" loading="lazy"/>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Modular Kitchens</div>
+          <p class="service-card-desc">Smart, functional kitchens with premium shutters, soft-close fittings, and layouts designed around how you cook.</p>
+          <div class="service-card-link">Explore ›</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1558997519-83ea9252eeb8?w=600&q=80" alt="Wardrobes" loading="lazy"/>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Wardrobes</div>
+          <p class="service-card-desc">Sliding, hinged, or walk-in — crafted with smart storage compartments and elegant finishes that elevate your bedroom.</p>
+          <div class="service-card-link">Explore ›</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="TV Units" loading="lazy"/>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">TV Units &amp; Entertainment</div>
+          <p class="service-card-desc">Custom-designed TV panels and entertainment units that become the centerpiece of your living room.</p>
+          <div class="service-card-link">Explore ›</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=600&q=80" alt="Bedroom Furniture" loading="lazy"/>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Bedroom Furniture</div>
+          <p class="service-card-desc">Beds, side tables, dressing units, and study desks — cohesive bedroom interiors designed for rest and comfort.</p>
+          <div class="service-card-link">Explore ›</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Living Room" loading="lazy"/>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Living Room Interiors</div>
+          <p class="service-card-desc">Sofa walls, crockery units, false ceilings, and feature walls that make your living room a space to be proud of.</p>
+          <div class="service-card-link">Explore ›</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img">
+          <span class="service-card-tag">Full Package</span>
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="Complete Home Interiors" loading="lazy"/>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-title">Complete Home Interiors</div>
+          <p class="service-card-desc">End-to-end home interior execution. One team, one price, zero stress. We handle design to final installation.</p>
+          <div class="service-card-link">Explore ›</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section class="why-us" id="about">
+  <div class="container">
+    <div class="why-us-grid">
+      <div class="why-us-img-wrap fade-up">
+        <img class="why-us-img-main" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="Nectar Factory" loading="lazy"/>
+        <img class="why-us-img-accent" src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&q=80" alt="Kitchen Detail" loading="lazy"/>
+        <div class="why-us-badge">
+          <strong>8+</strong>
+          <span>Years of Excellence</span>
+        </div>
+      </div>
+      <div>
+        <span class="section-label fade-up">Why Nectar</span>
+        <h2 class="section-title fade-up">Built Different. <em>Delivered Better.</em></h2>
+        <p class="section-sub fade-up">We're not just a furniture shop. We're a design and manufacturing company with our own factory in Pune — giving you better quality at direct prices.</p>
+        <div class="why-features">
+          <div class="why-feature fade-up">
+            <div class="why-feature-icon">🏭</div>
+            <div class="why-feature-text">
+              <strong>Own Manufacturing Factory</strong>
+              <p>We design and build in-house — no middlemen, no inflated costs. Factory-direct means better quality at better prices.</p>
+            </div>
+          </div>
+          <div class="why-feature fade-up">
+            <div class="why-feature-icon">📐</div>
+            <div class="why-feature-text">
+              <strong>Fully Customized to Your Space</strong>
+              <p>Every millimeter matters. We measure, design, and build furniture specific to your home — not off-the-shelf products.</p>
+            </div>
+          </div>
+          <div class="why-feature fade-up">
+            <div class="why-feature-icon">📦</div>
+            <div class="why-feature-text">
+              <strong>On-Time Delivery &amp; Installation</strong>
+              <p>We commit to timelines and keep them. Your project is managed end-to-end by a dedicated team from day one.</p>
+            </div>
+          </div>
+          <div class="why-feature fade-up">
+            <div class="why-feature-icon">💰</div>
+            <div class="why-feature-text">
+              <strong>Transparent Pricing</strong>
+              <p>No hidden costs. You get a detailed breakdown upfront so you always know what you're paying for.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTFOLIO ─── -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-header">
+      <div>
+        <span class="section-label fade-up">Our Work</span>
+        <h2 class="section-title fade-up">Homes We've <em>Transformed</em></h2>
+      </div>
+      <a href="#contact" class="btn btn-outline fade-up">Start Your Project →</a>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-up">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=700&q=80" alt="Modern Kitchen" loading="lazy"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Modern Kitchen</strong><span>Kharadi, Pune</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=700&q=80" alt="Luxury Wardrobe" loading="lazy"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Luxury Wardrobe</strong><span>Bhosari, Pune</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Living Room" loading="lazy"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Living Room Interior</strong><span>Viman Nagar, Pune</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80" alt="Complete Home Interior" loading="lazy"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Complete 2BHK Interior</strong><span>Wakad, Pune</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <img class="portfolio-img" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&q=80" alt="Bedroom" loading="lazy"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Master Bedroom</strong><span>Hinjewadi, Pune</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="process" id="process">
+  <div class="container">
+    <span class="section-label fade-up">How It Works</span>
+    <h2 class="section-title fade-up">From Idea to <em>Beautiful Reality</em></h2>
+    <p class="section-sub fade-up">A smooth, transparent process designed to make your experience stress-free from start to finish.</p>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Free Consultation</div>
+        <p class="process-step-desc">Visit our showroom or call us. We understand your space, style, and budget — no obligations.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Design Discussion</div>
+        <p class="process-step-desc">Our designer visits your home, takes measurements, and understands your exact requirements.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">3D Visualization</div>
+        <p class="process-step-desc">We create detailed 3D renders so you can see exactly how your home will look before we begin.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Manufacturing</div>
+        <p class="process-step-desc">Your furniture is precision-built at our Pune factory using premium materials and hardware.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">05</div>
+        <div class="process-step-title">Installation</div>
+        <p class="process-step-desc">Our expert team installs everything with care, keeping your home clean and on schedule.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">06</div>
+        <div class="process-step-title">Final Handover</div>
+        <p class="process-step-desc">We walk you through everything, ensure your complete satisfaction, and hand over your dream home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <span class="section-label fade-up">Customer Stories</span>
+    <h2 class="section-title fade-up">2000+ Families <em>Love Their Homes</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Nectar transformed our 2BHK completely. The modular kitchen is stunning and so functional. The team was professional, on time, and the quality is exactly what we expected — actually better!"</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma"/>
+          <div>
+            <div class="testimonial-author-name">Priya Sharma</div>
+            <div class="testimonial-author-loc">Kharadi, Pune</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We got our complete 3BHK done by Nectar and couldn't be happier. The 3D designs helped us visualize everything before it was built. Transparent pricing — no surprises at all."</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Deshmukh"/>
+          <div>
+            <div class="testimonial-author-name">Rahul Deshmukh</div>
+            <div class="testimonial-author-loc">Bhosari, Pune</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The wardrobe they built for our master bedroom is exactly what I had in mind. Space optimization was brilliant. I've already recommended Nectar to three of my friends!"</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sneha Joshi"/>
+          <div>
+            <div class="testimonial-author-name">Sneha Joshi</div>
+            <div class="testimonial-author-loc">Wakad, Pune</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE AFTER ─── -->
+<section class="before-after">
+  <div class="container">
+    <span class="section-label fade-up">Transformations</span>
+    <h2 class="section-title fade-up">See the <em>Difference</em> We Make</h2>
+    <div class="before-after-grid">
+      <div class="ba-item fade-up">
+        <img class="ba-img" src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=700&q=80" alt="Before Kitchen" loading="lazy"/>
+        <div class="ba-badge before">Before</div>
+        <div class="ba-caption"><strong>Empty Kitchen Space</strong><span>Raw apartment, no storage</span></div>
+      </div>
+      <div class="ba-item fade-up">
+        <img class="ba-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="After Kitchen" loading="lazy"/>
+        <div class="ba-badge after">After</div>
+        <div class="ba-caption"><strong>Nectar Modular Kitchen</strong><span>Complete transformation in 21 days</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INQUIRY / CONTACT ─── -->
+<section class="inquiry" id="contact">
+  <div class="container">
+    <div class="inquiry-inner">
+      <div class="inquiry-info fade-up">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Design Your <em>Dream Home</em></h2>
+        <p class="section-sub">Fill in the form and our design consultant will reach out within 2 hours. Free consultation, free 3D design, zero obligations.</p>
+        <div class="inquiry-contacts">
+          <div class="inquiry-contact">
+            <div class="inquiry-contact-icon">📍</div>
+            <div class="inquiry-contact-text">
+              <strong>Bhosari Showroom</strong>
+              <span>Plot No. XX, MIDC Road, Bhosari, Pune – 411026</span>
+            </div>
+          </div>
+          <div class="inquiry-contact">
+            <div class="inquiry-contact-icon">📍</div>
+            <div class="inquiry-contact-text">
+              <strong>Kharadi Showroom</strong>
+              <span>Shop No. XX, EON Free Zone, Kharadi, Pune – 411014</span>
+            </div>
+          </div>
+          <div class="inquiry-contact">
+            <div class="inquiry-contact-icon">📞</div>
+            <div class="inquiry-contact-text">
+              <strong>Call / WhatsApp</strong>
+              <span>+91 98765 43210 &nbsp;|&nbsp; +91 91234 56789</span>
+            </div>
+          </div>
+          <div class="inquiry-contact">
+            <div class="inquiry-contact-icon">✉️</div>
+            <div class="inquiry-contact-text">
+              <strong>Email Us</strong>
+              <span>hello@nectarfurniture.in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inquiry-form fade-up" id="inquiryForm">
+        <div class="form-title">Book Free Consultation</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="fname" placeholder="Rahul Sharma"/>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="fphone" placeholder="+91 98765 43210"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Area / Locality in Pune</label>
+          <input type="text" id="fcity" placeholder="e.g. Kharadi, Wakad, Bhosari..."/>
+        </div>
+        <div class="form-group">
+          <label>What Do You Need?</label>
+          <select id="frequirement">
+            <option value="">Select requirement</option>
+            <option>Modular Kitchen</option>
+            <option>Wardrobe</option>
+            <option>Complete Home Interior</option>
+            <option>TV Unit / Living Room</option>
+            <option>Bedroom Furniture</option>
+            <option>Multiple Rooms</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message (Optional)</label>
+          <textarea id="fmessage" rows="3" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Submit — Get Free Consultation 🏠</button>
+        <div class="form-success" id="formSuccess">
+          <div class="check">✅</div>
+          <strong>Thank you! We'll call you within 2 hours.</strong>
+          <p>Meanwhile, WhatsApp us for faster response.</p>
+          <a href="https://wa.me/919876543210" class="btn btn-whatsapp" style="margin:16px auto 0;justify-content:center;">💬 Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<section class="cta-banner">
+  <div class="cta-banner-overlay"></div>
+  <div class="container cta-banner-content">
+    <span class="section-label" style="color:var(--gold-light);">Limited Time Offer</span>
+    <h2 class="cta-banner-title">Design Your <em>Dream Home</em> Today</h2>
+    <p class="cta-banner-sub">Free 3D Design + Free Site Visit + Factory Direct Pricing — Only for Pune Residents</p>
+    <div class="cta-btns">
+      <a href="tel:+919876543210" class="btn btn-gold">📞 Call Now</a>
+      <a href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20modular%20furniture%20for%20my%20home." class="btn btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+      <a href="#contact" class="btn btn-outline-white">📋 Book Free Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-main">Nectar</div>
+        <div class="footer-logo-sub">Modular Kitchen &amp; Furniture</div>
+        <p class="footer-desc">Pune's trusted name in modular furniture and complete home interiors. Factory-direct quality, designer aesthetics, delivered on time.</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Instagram">in</a>
+          <a href="#" title="YouTube">▶</a>
+          <a href="#" title="WhatsApp">W</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="#">Modular Kitchens</a>
+          <a href="#">Wardrobes</a>
+          <a href="#">TV Units</a>
+          <a href="#">Bedroom Furniture</a>
+          <a href="#">Living Room</a>
+          <a href="#">Complete Home Interiors</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Our Projects</a>
+          <a href="#">Our Process</a>
+          <a href="#">Customer Reviews</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Showrooms</div>
+        <div class="footer-branch">
+          <strong>📍 Bhosari Branch</strong>
+          <p>Plot No. XX, MIDC Road,<br/>Bhosari, Pune – 411026<br/>📞 +91 98765 43210</p>
+        </div>
+        <div class="footer-branch">
+          <strong>📍 Kharadi Branch</strong>
+          <p>Shop No. XX, EON Free Zone,<br/>Kharadi, Pune – 411014<br/>📞 +91 91234 56789</p>
+        </div>
+        <div style="margin-top:8px">
+          <a href="mailto:hello@nectarfurniture.in" style="font-size:12.5px;color:rgba(255,255,255,0.5);">✉ hello@nectarfurniture.in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nectar Modular Kitchen &amp; Furniture. All rights reserved.</span>
+      <span>Designed with ❤️ in Pune</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── WHATSAPP FLOAT ─── -->
+<a class="whatsapp-float" href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20modular%20furniture." target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // ─── NAVBAR SCROLL ───
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ─── MOBILE MENU ───
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('open');
+  });
+  document.getElementById('mobileClose').addEventListener('click', closeMobile);
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ─── SCROLL ANIMATIONS ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ─── FORM SUBMIT ───
+  function submitForm() {
+    const name = document.getElementById('fname').value;
+    const phone = document.getElementById('fphone').value;
+    const req = document.getElementById('frequirement').value;
+    if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+    document.getElementById('inquiryForm').querySelector('form, div:not(.form-success)');
+    // Hide all form children except success
+    const form = document.getElementById('inquiryForm');
+    [...form.children].forEach(c => { if (!c.classList.contains('form-success')) c.style.display = 'none'; });
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // ─── SMOOTH ACTIVE NAV ───
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = '';
+      if (a.getAttribute('href') === '#' + cur) a.style.color = '#b8962e';
+    });
+  });
+</script>
+</body>
+</html>
