@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Book Free Site Consultation — Nectar Modular Kitchen & Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --cream:#F7F3ED;
+  --warm:#E2D5C3;
+  --bark:#5C3D2E;
+  --bark-light:#7A5240;
+  --gold:#C4933F;
+  --gold-lt:#D4A85A;
+  --ink:#1A0F0A;
+  --muted:#8A7060;
+  --muted-lt:#B0A090;
+  --white:#FFFFFF;
+  --r:11px;
+  --success:#2D7A4F;
+}
+
+html,body{
+  width:100%;min-height:100%;
+  background:var(--cream);
+  font-family:'Noto Sans',sans-serif;
+  color:var(--ink);
+  -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
+}
+
+/* ── background grain + glow ── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 90% 50% at 5% 0%,rgba(196,147,63,.10) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 60% at 100% 100%,rgba(92,61,46,.08) 0%,transparent 55%);
+}
+
+/* ── WRAP ── */
+.wrap{
+  position:relative;z-index:1;
+  width:100%;min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:stretch;
+  padding:20px 14px 36px;
+}
+
+/* ── BRAND ── */
+.brand{
+  display:flex;flex-direction:column;align-items:center;
+  margin-bottom:16px;
+  animation:up .45s ease both;
+}
+.logo-row{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.logo-circle{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--bark);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-circle svg{width:16px;height:16px;fill:var(--gold)}
+.brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.45rem;font-weight:700;
+  color:var(--bark);letter-spacing:.02em;line-height:1;
+}
+.brand-tag{
+  font-size:.62rem;font-weight:600;
+  color:var(--muted);letter-spacing:.15em;text-transform:uppercase;
+}
+
+/* ── TRUST STRIP ── */
+.trust{
+  display:flex;justify-content:center;gap:14px;
+  margin-bottom:14px;
+  animation:up .45s .05s ease both;opacity:0;
+}
+.trust-item{
+  display:flex;align-items:center;gap:4px;
+  font-size:.62rem;font-weight:600;
+  color:var(--muted);letter-spacing:.04em;
+}
+.trust-item svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ── CARD ── */
+.card{
+  background:var(--white);
+  border-radius:16px;
+  box-shadow:0 2px 24px rgba(92,61,46,.11),0 1px 4px rgba(92,61,46,.07);
+  width:100%;
+  padding:18px 15px 22px;
+  animation:up .45s .1s ease both;opacity:0;
+}
+
+.badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#FFF5E6;color:var(--gold);
+  font-size:.6rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 9px 3px 7px;border-radius:20px;
+  border:1px solid #F0D9B5;margin-bottom:9px;
+}
+.badge svg{width:10px;height:10px;fill:var(--gold)}
+
+.ctitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;font-weight:700;
+  color:var(--bark);line-height:1.2;margin-bottom:4px;
+}
+.csub{
+  font-size:.75rem;color:var(--muted);
+  line-height:1.55;margin-bottom:14px;
+}
+
+.divider{
+  width:32px;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  border-radius:2px;margin-bottom:15px;
+}
+
+/* ── FIELDS ── */
+.field{margin-bottom:12px}
+.field label{
+  display:block;font-size:.62rem;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:5px;
+}
+.field input,.field textarea{
+  width:100%;background:#FAFAF8;
+  border:1.5px solid var(--warm);
+  border-radius:var(--r);
+  padding:12px 13px;
+  font-family:'Noto Sans',sans-serif;
+  font-size:16px;
+  color:var(--ink);
+  outline:none;-webkit-appearance:none;
+  transition:border-color .15s,box-shadow .15s,background .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted-lt)}
+.field input:focus,.field textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(196,147,63,.13);
+  background:var(--white);
+}
+.field textarea{resize:none;min-height:76px}
+
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* field icons */
+.field-wrap{position:relative}
+.field-wrap input{padding-left:36px}
+.field-icon{
+  position:absolute;left:11px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;
+  stroke:var(--muted-lt);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+  pointer-events:none;
+}
+
+/* ── SUBMIT ── */
+.btn{
+  width:100%;margin-top:5px;
+  padding:15px;
+  background:var(--bark);color:#fff;
+  border:none;border-radius:var(--r);
+  font-family:'Noto Sans',sans-serif;
+  font-size:.95rem;font-weight:700;
+  letter-spacing:.03em;cursor:pointer;
+  -webkit-appearance:none;
+  transition:background .15s,transform .1s;
+  position:relative;overflow:hidden;
+}
+.btn:active{background:var(--bark-light);transform:scale(.99)}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.btn-shine{
+  position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  animation:shine 2s 1s ease both;
+}
+@keyframes shine{0%{left:-100%}100%{left:200%}}
+
+/* ── SPINNER ── */
+.sp{
+  display:inline-block;width:14px;height:14px;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;
+  border-radius:50%;animation:spin .6s linear infinite;
+  margin-right:6px;vertical-align:middle;
+}
+
+/* ── ERROR ── */
+.err{
+  background:#fff3f0;border:1.5px solid #f5c6bb;
+  border-radius:9px;color:#b84535;
+  font-size:.78rem;font-weight:500;
+  padding:10px 12px;margin-top:10px;display:none;
+  line-height:1.45;
+}
+
+/* ── SUCCESS ── */
+.success{
+  display:none;flex-direction:column;align-items:center;
+  text-align:center;padding:6px 0 2px;
+}
+.tick{
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--bark));
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+  box-shadow:0 4px 18px rgba(196,147,63,.28);
+  animation:pop .4s cubic-bezier(.34,1.56,.64,1) both;
+}
+.tick svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--bark);margin-bottom:5px}
+.s-msg{font-size:.76rem;color:var(--muted);line-height:1.6;margin-bottom:18px}
+.cat-btn{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
+  color:#fff;text-decoration:none;
+  border-radius:var(--r);border:none;
+  font-family:'Noto Sans',sans-serif;
+  font-size:.9rem;font-weight:700;
+  box-shadow:0 4px 16px rgba(196,147,63,.3);
+  cursor:pointer;-webkit-appearance:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.cat-btn svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.again{
+  margin-top:12px;font-size:.72rem;color:var(--muted);
+  text-decoration:underline;text-underline-offset:3px;
+  background:none;border:none;cursor:pointer;
+  font-family:'Noto Sans',sans-serif;
+}
+
+/* ── FOOTER NOTE ── */
+.foot-note{
+  text-align:center;margin-top:14px;
+  font-size:.62rem;color:var(--muted-lt);
+  animation:up .45s .15s ease both;opacity:0;
+}
+
+/* ── DESKTOP ── */
+@media(min-width:560px){
+  .wrap{align-items:center;padding:40px 20px 60px}
+  .card{max-width:460px;padding:28px 26px 32px}
+  .brand{margin-bottom:22px}
+  .brand-name{font-size:1.65rem}
+  .ctitle{font-size:1.4rem}
+}
+
+/* ── ANIMATIONS ── */
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Brand -->
+  <div class="brand">
+    <div class="logo-row">
+      <div class="logo-circle">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22" fill="#5C3D2E"/></svg>
+      </div>
+      <span class="brand-name">Nectar</span>
+    </div>
+    <div class="brand-tag">Modular Kitchen &amp; Furniture</div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="trust">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      100% Free
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Same Day Reply
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      No Obligations
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div id="fv">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Free — No Obligations
+      </div>
+      <div class="ctitle">Book Free Site Consultation Visit</div>
+      <p class="csub">Our designer will visit your site for consultation. Fill in your details and we'll confirm your slot shortly.</p>
+      <div class="divider"></div>
+
+      <div class="field">
+        <label>Full Name *</label>
+        <div class="field-wrap">
+          <svg class="field-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <input type="text" id="fn" placeholder="e.g. Priya Sharma" autocomplete="name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Phone Number *</label>
+        <div class="field-wrap">
+          <svg class="field-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <input type="tel" id="fp" placeholder="+91 98765 43210" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Site Address *</label>
+        <div class="field-wrap">
+          <svg class="field-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <input type="text" id="fa" placeholder="e.g. Flat 4B, Baner, Pune" autocomplete="street-address">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>Visit Date *</label>
+          <input type="date" id="fd">
+        </div>
+        <div class="field">
+          <label>Visit Time *</label>
+          <input type="text" id="ft" placeholder="e.g. 11 AM">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Requirement</label>
+        <textarea id="fr" placeholder="e.g. Modular kitchen for 2BHK, budget ₹3–5L…"></textarea>
+      </div>
+
+      <button class="btn" id="sb" onclick="go()">
+        <div class="btn-shine"></div>
+        Confirm Visit Booking
+      </button>
+      <div class="err" id="em"></div>
+    </div>
+
+    <!-- Success -->
+    <div class="success" id="sv">
+      <div class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="s-title">You're Booked!</div>
+      <p class="s-msg">Thank you! Our team will call you to confirm the site visit.<br>Meanwhile, explore our full catalogue.</p>
+      <a id="cb" href="#" target="_blank" class="cat-btn">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        View Our Catalogue
+      </a>
+      <button class="again" onclick="resetForm()">Book another visit</button>
+    </div>
+  </div>
+
+  <div class="foot-note">© 2025 Nectar Modular Kitchen &amp; Furniture. All rights reserved.</div>
+</div>
+
+<script>
+// ============================================================
+//  PASTE YOUR GOOGLE APPS SCRIPT /exec URL BELOW
+//  (from the API-only GAS file you deploy separately)
+// ============================================================
+var GAS_URL = 'PASTE_YOUR_GAS_URL_HERE';
+var CATALOGUE_URL = 'PASTE_YOUR_CATALOGUE_URL_HERE';
+
+document.getElementById('fd').min = new Date().toISOString().split('T')[0];
+
+function go() {
+  var n  = v('fn'), p = v('fp'), a = v('fa'),
+      d  = v('fd'), t = v('ft'), r = v('fr');
+  var em = document.getElementById('em');
+  var sb = document.getElementById('sb');
+
+  if (!n || !p || !a || !d || !t) {
+    show_err('Please fill all required (*) fields.');
+    return;
+  }
+  if (!/^[0-9+\s\-]{7,15}$/.test(p)) {
+    show_err('Please enter a valid phone number.');
+    return;
+  }
+
+  em.style.display = 'none';
+  sb.disabled = true;
+  sb.innerHTML = '<span class="sp"></span>Submitting…';
+
+  var params = new URLSearchParams({
+    name: n, phone: p, area: a,
+    visitDate: d, visitTime: t, requirement: r
+  });
+
+  fetch(GAS_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    if (data.success) {
+      document.getElementById('cb').href = data.catalogueUrl || CATALOGUE_URL || '#';
+      document.getElementById('fv').style.display = 'none';
+      var s = document.getElementById('sv');
+      s.style.display = 'flex';
+    } else {
+      show_err('Something went wrong. Please try again.');
+      sb.disabled = false;
+      sb.innerHTML = '<div class="btn-shine"></div>Confirm Visit Booking';
+    }
+  })
+  .catch(function() {
+    show_err('Network error. Please check your connection and try again.');
+    sb.disabled = false;
+    sb.innerHTML = '<div class="btn-shine"></div>Confirm Visit Booking';
+  });
+}
+
+function v(id) { return document.getElementById(id).value.trim(); }
+function show_err(msg) {
+  var el = document.getElementById('em');
+  el.textContent = msg; el.style.display = 'block';
+}
+function resetForm() {
+  ['fn','fp','fa','fd','ft','fr'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('sv').style.display = 'none';
+  document.getElementById('fv').style.display = 'block';
+  document.getElementById('sb').disabled = false;
+  document.getElementById('sb').innerHTML = '<div class="btn-shine"></div>Confirm Visit Booking';
+}
+</script>
+</body>
+</html>
