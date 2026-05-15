@@ -1,437 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Book Free Site Consultation — Nectar Modular Kitchen & Furniture</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Book Free Site Consultation | Nectar Modular Kitchen & Furniture</title>
+<meta name="description" content="Book a free site consultation visit. Our designer visits your home — free 3D design, no obligations."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
-  --cream:#F7F3ED;
-  --warm:#E2D5C3;
-  --bark:#5C3D2E;
-  --bark-light:#7A5240;
-  --gold:#C4933F;
-  --gold-lt:#D4A85A;
-  --ink:#1A0F0A;
-  --muted:#8A7060;
-  --muted-lt:#B0A090;
-  --white:#FFFFFF;
-  --r:11px;
-  --success:#2D7A4F;
+  --charcoal:#1c1c1c;--gold:#b8962e;--gold-lt:#d4af6a;
+  --wood:#c4956a;--wood-pale:#f5ede0;
+  --cream:#faf8f4;--border:#e8e0d4;
+  --text:#1c1c1c;--muted:#666;--light:#999;
+  --font-d:'Cormorant Garamond',serif;--font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);color:var(--text);background:var(--cream);overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  box-shadow:0 1px 16px rgba(0,0,0,.08);
+  padding:11px 0;
+}
+.nav-in{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo-m{font-family:var(--font-d);font-size:1.55rem;font-weight:600;color:var(--charcoal);letter-spacing:-.4px}
+.logo-s{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--charcoal);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-btn{background:var(--gold);color:#fff!important;padding:9px 18px;border-radius:3px;font-size:12px!important;font-weight:600!important}
+.nav-btn:hover{background:#9e7d22!important}
+.nav-btn::after{display:none!important}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:3px}
+.hbg span{display:block;width:21px;height:1.5px;background:var(--charcoal)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--charcoal);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--font-d);font-size:1.8rem;color:#fff}
+.mob-close{position:absolute;top:22px;right:22px;font-size:1.8rem;color:#fff;background:none;border:none;cursor:pointer}
+@media(max-width:680px){.nav-links,.nav-btn{display:none}.hbg{display:flex}}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:40px 20px 60px;
+  background:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80') center/cover no-repeat;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(18,12,6,.78) 0%,rgba(18,12,6,.55) 100%);
+}
+.hero-content{position:relative;z-index:2;width:100%;max-width:480px}
+
+/* hero title */
+.hero-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(184,150,46,.18);border:1px solid rgba(184,150,46,.35);
+  color:var(--gold-lt);font-size:10px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;margin-bottom:14px;
+}
+.hero-title{
+  font-family:var(--font-d);
+  font-size:clamp(1.8rem,5vw,2.6rem);
+  font-weight:500;color:#fff;
+  line-height:1.18;margin-bottom:8px;
+}
+.hero-title em{font-style:italic;color:var(--gold-lt)}
+.hero-sub{
+  font-size:.82rem;color:rgba(255,255,255,.68);
+  line-height:1.6;margin-bottom:22px;
 }
 
-html,body{
-  width:100%;min-height:100%;
-  background:var(--cream);
-  font-family:'Noto Sans',sans-serif;
-  color:var(--ink);
-  -webkit-text-size-adjust:100%;
-  overflow-x:hidden;
+/* ── FORM CARD ── */
+.fcard{
+  background:#fff;border-radius:10px;
+  box-shadow:0 8px 40px rgba(0,0,0,.22);
+  overflow:hidden;
 }
-
-/* ── background grain + glow ── */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 90% 50% at 5% 0%,rgba(196,147,63,.10) 0%,transparent 55%),
-    radial-gradient(ellipse 70% 60% at 100% 100%,rgba(92,61,46,.08) 0%,transparent 55%);
-}
-
-/* ── WRAP ── */
-.wrap{
-  position:relative;z-index:1;
-  width:100%;min-height:100vh;
-  display:flex;flex-direction:column;
-  align-items:stretch;
-  padding:20px 14px 36px;
-}
-
-/* ── BRAND ── */
-.brand{
-  display:flex;flex-direction:column;align-items:center;
-  margin-bottom:16px;
-  animation:up .45s ease both;
-}
-.logo-row{display:flex;align-items:center;gap:8px;margin-bottom:3px}
-.logo-circle{
-  width:30px;height:30px;border-radius:50%;
-  background:var(--bark);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.logo-circle svg{width:16px;height:16px;fill:var(--gold)}
-.brand-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.45rem;font-weight:700;
-  color:var(--bark);letter-spacing:.02em;line-height:1;
-}
-.brand-tag{
-  font-size:.62rem;font-weight:600;
-  color:var(--muted);letter-spacing:.15em;text-transform:uppercase;
-}
-
-/* ── TRUST STRIP ── */
-.trust{
-  display:flex;justify-content:center;gap:14px;
-  margin-bottom:14px;
-  animation:up .45s .05s ease both;opacity:0;
-}
-.trust-item{
-  display:flex;align-items:center;gap:4px;
-  font-size:.62rem;font-weight:600;
-  color:var(--muted);letter-spacing:.04em;
-}
-.trust-item svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-
-/* ── CARD ── */
-.card{
-  background:var(--white);
-  border-radius:16px;
-  box-shadow:0 2px 24px rgba(92,61,46,.11),0 1px 4px rgba(92,61,46,.07);
-  width:100%;
-  padding:18px 15px 22px;
-  animation:up .45s .1s ease both;opacity:0;
-}
-
-.badge{
-  display:inline-flex;align-items:center;gap:5px;
-  background:#FFF5E6;color:var(--gold);
-  font-size:.6rem;font-weight:700;
+.fcard-head{background:var(--charcoal);padding:16px 20px}
+.fcard-badge{
+  display:inline-block;
+  background:rgba(184,150,46,.2);border:1px solid rgba(184,150,46,.3);
+  color:var(--gold-lt);font-size:9px;font-weight:700;
   letter-spacing:.1em;text-transform:uppercase;
-  padding:3px 9px 3px 7px;border-radius:20px;
-  border:1px solid #F0D9B5;margin-bottom:9px;
+  padding:3px 9px;border-radius:20px;margin-bottom:8px;
 }
-.badge svg{width:10px;height:10px;fill:var(--gold)}
+.fcard-title{font-family:var(--font-d);font-size:1.25rem;font-weight:500;color:#fff;line-height:1.2;margin-bottom:3px}
+.fcard-title em{font-style:italic;color:var(--gold-lt)}
+.fcard-sub{font-size:.72rem;color:rgba(255,255,255,.55);line-height:1.5}
+.fcard-body{padding:18px 18px 20px}
 
-.ctitle{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.25rem;font-weight:700;
-  color:var(--bark);line-height:1.2;margin-bottom:4px;
-}
-.csub{
-  font-size:.75rem;color:var(--muted);
-  line-height:1.55;margin-bottom:14px;
-}
-
-.divider{
-  width:32px;height:2px;
-  background:linear-gradient(90deg,var(--gold),transparent);
-  border-radius:2px;margin-bottom:15px;
-}
-
-/* ── FIELDS ── */
-.field{margin-bottom:12px}
-.field label{
-  display:block;font-size:.62rem;font-weight:700;
-  letter-spacing:.09em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:5px;
-}
-.field input,.field textarea{
-  width:100%;background:#FAFAF8;
-  border:1.5px solid var(--warm);
-  border-radius:var(--r);
-  padding:12px 13px;
-  font-family:'Noto Sans',sans-serif;
-  font-size:16px;
-  color:var(--ink);
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--light);margin-bottom:4px}
+.fw{position:relative}
+.fi{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--light);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.has-i input{padding-left:32px!important}
+.fg input,.fg textarea{
+  width:100%;padding:11px 12px;
+  border:1.5px solid var(--border);border-radius:5px;
+  font-family:var(--font-b);font-size:16px;
+  color:var(--text);background:var(--cream);
   outline:none;-webkit-appearance:none;
-  transition:border-color .15s,box-shadow .15s,background .15s;
+  transition:border-color .15s,background .15s;
   -webkit-tap-highlight-color:transparent;
 }
-.field input::placeholder,.field textarea::placeholder{color:var(--muted-lt)}
-.field input:focus,.field textarea:focus{
-  border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(196,147,63,.13);
-  background:var(--white);
-}
-.field textarea{resize:none;min-height:76px}
+.fg input::placeholder,.fg textarea::placeholder{color:#c0b8b0}
+.fg input:focus,.fg textarea:focus{border-color:var(--wood);background:#fff}
+.fg textarea{resize:none;min-height:68px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:400px){.frow{grid-template-columns:1fr}}
 
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fsub{
+  width:100%;margin-top:4px;padding:13px;
+  background:var(--charcoal);color:#fff;
+  border:none;border-radius:5px;
+  font-family:var(--font-b);font-size:.9rem;font-weight:600;
+  cursor:pointer;-webkit-appearance:none;
+  transition:background .15s;
+}
+.fsub:hover{background:#2d2d2d}
+.fsub:disabled{opacity:.55;cursor:not-allowed}
+.fnote{text-align:center;margin-top:9px;font-size:10.5px;color:var(--light);line-height:1.5}
+.ferr{background:#fff3f0;border:1px solid #f5c6bb;border-radius:5px;color:#b84535;font-size:.76rem;padding:8px 11px;margin-top:8px;display:none}
 
-/* field icons */
-.field-wrap{position:relative}
-.field-wrap input{padding-left:36px}
-.field-icon{
-  position:absolute;left:11px;top:50%;transform:translateY(-50%);
-  width:16px;height:16px;
-  stroke:var(--muted-lt);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
-  pointer-events:none;
-}
-
-/* ── SUBMIT ── */
-.btn{
-  width:100%;margin-top:5px;
-  padding:15px;
-  background:var(--bark);color:#fff;
-  border:none;border-radius:var(--r);
-  font-family:'Noto Sans',sans-serif;
-  font-size:.95rem;font-weight:700;
-  letter-spacing:.03em;cursor:pointer;
-  -webkit-appearance:none;
-  transition:background .15s,transform .1s;
-  position:relative;overflow:hidden;
-}
-.btn:active{background:var(--bark-light);transform:scale(.99)}
-.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
-.btn-shine{
-  position:absolute;top:0;left:-100%;width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
-  animation:shine 2s 1s ease both;
-}
-@keyframes shine{0%{left:-100%}100%{left:200%}}
-
-/* ── SPINNER ── */
-.sp{
-  display:inline-block;width:14px;height:14px;
-  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;
-  border-radius:50%;animation:spin .6s linear infinite;
-  margin-right:6px;vertical-align:middle;
-}
-
-/* ── ERROR ── */
-.err{
-  background:#fff3f0;border:1.5px solid #f5c6bb;
-  border-radius:9px;color:#b84535;
-  font-size:.78rem;font-weight:500;
-  padding:10px 12px;margin-top:10px;display:none;
-  line-height:1.45;
-}
+/* spinner */
+.sp{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin-right:5px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* ── SUCCESS ── */
-.success{
-  display:none;flex-direction:column;align-items:center;
-  text-align:center;padding:6px 0 2px;
-}
-.tick{
-  width:58px;height:58px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),var(--bark));
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:14px;
-  box-shadow:0 4px 18px rgba(196,147,63,.28);
-  animation:pop .4s cubic-bezier(.34,1.56,.64,1) both;
-}
-.tick svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.s-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--bark);margin-bottom:5px}
-.s-msg{font-size:.76rem;color:var(--muted);line-height:1.6;margin-bottom:18px}
-.cat-btn{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  width:100%;padding:14px;
-  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
-  color:#fff;text-decoration:none;
-  border-radius:var(--r);border:none;
-  font-family:'Noto Sans',sans-serif;
-  font-size:.9rem;font-weight:700;
-  box-shadow:0 4px 16px rgba(196,147,63,.3);
-  cursor:pointer;-webkit-appearance:none;
-  -webkit-tap-highlight-color:transparent;
-}
-.cat-btn svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.again{
-  margin-top:12px;font-size:.72rem;color:var(--muted);
-  text-decoration:underline;text-underline-offset:3px;
-  background:none;border:none;cursor:pointer;
-  font-family:'Noto Sans',sans-serif;
-}
+.fsuccess{display:none;text-align:center;padding:24px 16px}
+.s-tick{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--wood));display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 16px rgba(184,150,46,.28)}
+.s-tick svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.s-title{font-family:var(--font-d);font-size:1.5rem;color:var(--charcoal);margin-bottom:5px}
+.s-msg{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:12px;background:#25D366;color:#fff;border:none;border-radius:5px;font-family:var(--font-b);font-size:.86rem;font-weight:600;cursor:pointer;text-decoration:none}
+.wa-btn svg{width:15px;height:15px;fill:#fff}
+.again{margin-top:9px;font-size:.72rem;color:var(--light);text-decoration:underline;background:none;border:none;cursor:pointer;font-family:var(--font-b);display:block;width:100%}
 
-/* ── FOOTER NOTE ── */
-.foot-note{
-  text-align:center;margin-top:14px;
-  font-size:.62rem;color:var(--muted-lt);
-  animation:up .45s .15s ease both;opacity:0;
-}
+/* ── REVIEWS ── */
+.reviews{background:var(--cream);padding:52px 20px 64px}
+.rv-wrap{max-width:900px;margin:0 auto}
+.rv-head{text-align:center;margin-bottom:32px}
+.rv-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.rv-title{font-family:var(--font-d);font-size:clamp(1.5rem,3vw,2rem);font-weight:500;color:var(--charcoal)}
+.rv-title em{font-style:italic;color:var(--wood)}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:700px){.rv-grid{grid-template-columns:1fr;gap:14px}}
+.rv-card{background:#fff;border-radius:8px;padding:22px 20px;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
+.rv-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.09);transform:translateY(-2px)}
+.rv-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:10px}
+.rv-text{font-size:13px;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:16px}
+.rv-author{display:flex;align-items:center;gap:10px}
+.rv-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+.rv-name{font-size:13px;font-weight:600;color:var(--charcoal)}
+.rv-loc{font-size:11px;color:var(--light);margin-top:1px}
+.rv-tag{display:inline-block;margin-top:3px;font-size:10px;font-weight:600;color:var(--gold);background:var(--wood-pale);padding:2px 7px;border-radius:10px}
 
-/* ── DESKTOP ── */
-@media(min-width:560px){
-  .wrap{align-items:center;padding:40px 20px 60px}
-  .card{max-width:460px;padding:28px 26px 32px}
-  .brand{margin-bottom:22px}
-  .brand-name{font-size:1.65rem}
-  .ctitle{font-size:1.4rem}
-}
+/* ── FOOTER ── */
+footer{background:#111;padding:22px 20px;text-align:center}
+.ft-logo{font-family:var(--font-d);font-size:1.3rem;color:#fff;font-weight:500;margin-bottom:4px}
+.ft-sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.ft-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+.ft-links a{font-size:12px;color:rgba(255,255,255,.45);transition:color .2s}
+.ft-links a:hover{color:#fff}
+.ft-copy{font-size:11px;color:rgba(255,255,255,.25)}
 
-/* ── ANIMATIONS ── */
-@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* ── WHATSAPP FLOAT ── */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:999;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.45);animation:wap 2.5s infinite}
+.wa-float svg{width:25px;height:25px;fill:#fff}
+@keyframes wap{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.45)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- Brand -->
-  <div class="brand">
-    <div class="logo-row">
-      <div class="logo-circle">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22" fill="#5C3D2E"/></svg>
-      </div>
-      <span class="brand-name">Nectar</span>
-    </div>
-    <div class="brand-tag">Modular Kitchen &amp; Furniture</div>
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <a href="/" class="logo">
+      <span class="logo-m">Nectar</span>
+      <span class="logo-s">Modular Kitchen &amp; Furniture</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#portfolio">Projects</a></li>
+      <li><a href="/#testimonials">Reviews</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <a href="#form" class="nav-btn">Free Consultation</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-
-  <!-- Trust strip -->
-  <div class="trust">
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      100% Free
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Same Day Reply
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      No Obligations
-    </div>
-  </div>
-
-  <!-- Card -->
-  <div class="card">
-    <div id="fv">
-      <div class="badge">
-        <svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Free — No Obligations
-      </div>
-      <div class="ctitle">Book Free Site Consultation Visit</div>
-      <p class="csub">Our designer will visit your site for consultation. Fill in your details and we'll confirm your slot shortly.</p>
-      <div class="divider"></div>
-
-      <div class="field">
-        <label>Full Name *</label>
-        <div class="field-wrap">
-          <svg class="field-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <input type="text" id="fn" placeholder="e.g. Priya Sharma" autocomplete="name">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Phone Number *</label>
-        <div class="field-wrap">
-          <svg class="field-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <input type="tel" id="fp" placeholder="+91 98765 43210" autocomplete="tel">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Site Address *</label>
-        <div class="field-wrap">
-          <svg class="field-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <input type="text" id="fa" placeholder="e.g. Flat 4B, Baner, Pune" autocomplete="street-address">
-        </div>
-      </div>
-
-      <div class="row2">
-        <div class="field">
-          <label>Visit Date *</label>
-          <input type="date" id="fd">
-        </div>
-        <div class="field">
-          <label>Visit Time *</label>
-          <input type="text" id="ft" placeholder="e.g. 11 AM">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Requirement</label>
-        <textarea id="fr" placeholder="e.g. Modular kitchen for 2BHK, budget ₹3–5L…"></textarea>
-      </div>
-
-      <button class="btn" id="sb" onclick="go()">
-        <div class="btn-shine"></div>
-        Confirm Visit Booking
-      </button>
-      <div class="err" id="em"></div>
-    </div>
-
-    <!-- Success -->
-    <div class="success" id="sv">
-      <div class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="s-title">You're Booked!</div>
-      <p class="s-msg">Thank you! Our team will call you to confirm the site visit.<br>Meanwhile, explore our full catalogue.</p>
-      <a id="cb" href="#" target="_blank" class="cat-btn">
-        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-        View Our Catalogue
-      </a>
-      <button class="again" onclick="resetForm()">Book another visit</button>
-    </div>
-  </div>
-
-  <div class="foot-note">© 2025 Nectar Modular Kitchen &amp; Furniture. All rights reserved.</div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#10005;</button>
+  <a href="/" onclick="cm()">Home</a>
+  <a href="/#services" onclick="cm()">Services</a>
+  <a href="/#portfolio" onclick="cm()">Projects</a>
+  <a href="/#testimonials" onclick="cm()">Reviews</a>
+  <a href="#form" onclick="cm()">Book Consultation</a>
 </div>
 
+<!-- HERO + FORM -->
+<section class="hero" id="form">
+  <div class="hero-content">
+    <div class="hero-tag">&#10022; Free &mdash; No Obligations</div>
+    <h1 class="hero-title">Book Your Free<br/><em>Site Consultation</em></h1>
+    <p class="hero-sub">Our designer visits your home, takes measurements &amp; gives you a free 3D design. Zero obligations.</p>
+
+    <div class="fcard">
+      <div class="fcard-head">
+        <div class="fcard-badge">&#10022; FREE VISIT</div>
+        <div class="fcard-title">Book <em>Site Consultation</em></div>
+        <div class="fcard-sub">We'll confirm your slot within 2 hours.</div>
+      </div>
+      <div class="fcard-body">
+        <div id="ffields">
+          <div class="fg">
+            <label>Full Name *</label>
+            <div class="fw has-i">
+              <svg class="fi" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="fn" placeholder="e.g. Priya Sharma" autocomplete="name">
+            </div>
+          </div>
+          <div class="fg">
+            <label>Phone Number *</label>
+            <div class="fw has-i">
+              <svg class="fi" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <input type="tel" id="fp" placeholder="+91 98765 43210" autocomplete="tel">
+            </div>
+          </div>
+          <div class="fg">
+            <label>Site Address *</label>
+            <div class="fw has-i">
+              <svg class="fi" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <input type="text" id="fa" placeholder="e.g. Flat 4B, Baner, Pune" autocomplete="street-address">
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label>Visit Date *</label><input type="date" id="fd"></div>
+            <div class="fg"><label>Visit Time *</label><input type="text" id="ft" placeholder="e.g. 11 AM"></div>
+          </div>
+          <div class="fg">
+            <label>Requirement</label>
+            <textarea id="fr" placeholder="e.g. Modular kitchen for 2BHK, budget &#8377;3&#8211;5L&#8230;"></textarea>
+          </div>
+          <button class="fsub" id="sb" onclick="go()">Book Free Site Visit &#8594;</button>
+          <div class="ferr" id="em"></div>
+          <div class="fnote">&#128274; Your details are safe &amp; never shared.</div>
+        </div>
+
+        <div class="fsuccess" id="sv">
+          <div class="s-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="s-title">You're Booked!</div>
+          <p class="s-msg">Our team will call you within 2 hours to confirm your site visit.</p>
+          <a href="https://wa.me/919876543210?text=Hi!%20I%20just%20booked%20a%20free%20consultation." target="_blank" class="wa-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <button class="again" onclick="rf()">Submit another enquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="rv-wrap">
+    <div class="rv-head">
+      <span class="rv-label">What Our Customers Say</span>
+      <div class="rv-title">2000+ Families <em>Love Their Homes</em></div>
+    </div>
+    <div class="rv-grid">
+      <div class="rv-card">
+        <div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rv-text">"The designer visited within 2 days, measured everything, and the 3D design was exactly what we imagined. Our modular kitchen looks stunning. Very professional team!"</p>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma"/>
+          <div>
+            <div class="rv-name">Priya Sharma</div>
+            <div class="rv-loc">Kharadi, Pune</div>
+            <span class="rv-tag">Modular Kitchen</span>
+          </div>
+        </div>
+      </div>
+      <div class="rv-card">
+        <div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rv-text">"Got our complete 3BHK done by Nectar. The site visit was free, transparent pricing, zero pressure. They delivered on time and within budget. Highly recommended!"</p>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Deshmukh"/>
+          <div>
+            <div class="rv-name">Rahul Deshmukh</div>
+            <div class="rv-loc">Bhosari, Pune</div>
+            <span class="rv-tag">Complete 3BHK</span>
+          </div>
+        </div>
+      </div>
+      <div class="rv-card">
+        <div class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rv-text">"The wardrobe they built is exactly what I had in mind. Their designer understood our space perfectly. Quality is top-notch and they cleaned up after installation too!"</p>
+        <div class="rv-author">
+          <img class="rv-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sneha Joshi"/>
+          <div>
+            <div class="rv-name">Sneha Joshi</div>
+            <div class="rv-loc">Wakad, Pune</div>
+            <span class="rv-tag">Wardrobe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">Nectar</div>
+  <div class="ft-sub">Modular Kitchen &amp; Furniture &middot; Pune</div>
+  <div class="ft-links">
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/#portfolio">Projects</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <div class="ft-copy">&copy; 2025 Nectar Modular Kitchen &amp; Furniture. All rights reserved.</div>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="wa-float" href="https://wa.me/919876543210" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
 <script>
-// ============================================================
-//  PASTE YOUR GOOGLE APPS SCRIPT /exec URL BELOW
-//  (from the API-only GAS file you deploy separately)
-// ============================================================
+// ══════════════════════════════
+// PASTE YOUR GAS URL HERE
+// ══════════════════════════════
 var GAS_URL = 'https://script.google.com/macros/s/AKfycby157y6Vk70CbGgjTXshWmXvysqR3gMVUqtyrkCq0k41ENNvseoemgzJyhmG-m7U_I/exec';
-var CATALOGUE_URL = 'PASTE_YOUR_CATALOGUE_URL_HERE';
 
-document.getElementById('fd').min = new Date().toISOString().split('T')[0];
+document.getElementById('hbg').onclick=function(){document.getElementById('mobMenu').classList.add('open')};
+document.getElementById('mobClose').onclick=cm;
+function cm(){document.getElementById('mobMenu').classList.remove('open')}
+document.getElementById('fd').min=new Date().toISOString().split('T')[0];
 
-function go() {
-  var n  = v('fn'), p = v('fp'), a = v('fa'),
-      d  = v('fd'), t = v('ft'), r = v('fr');
-  var em = document.getElementById('em');
-  var sb = document.getElementById('sb');
-
-  if (!n || !p || !a || !d || !t) {
-    show_err('Please fill all required (*) fields.');
-    return;
-  }
-  if (!/^[0-9+\s\-]{7,15}$/.test(p)) {
-    show_err('Please enter a valid phone number.');
-    return;
-  }
-
-  em.style.display = 'none';
-  sb.disabled = true;
-  sb.innerHTML = '<span class="sp"></span>Submitting…';
-
-  var params = new URLSearchParams({
-    name: n, phone: p, area: a,
-    visitDate: d, visitTime: t, requirement: r
-  });
-
-  fetch(GAS_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: params.toString()
+function go(){
+  var n=g('fn'),p=g('fp'),a=g('fa'),d=g('fd'),t=g('ft'),r=g('fr');
+  var em=document.getElementById('em'),sb=document.getElementById('sb');
+  if(!n||!p||!a||!d||!t){e('Please fill all required (*) fields.');return}
+  if(!/^[0-9+\s\-]{7,15}$/.test(p)){e('Please enter a valid phone number.');return}
+  em.style.display='none';sb.disabled=true;
+  sb.innerHTML='<span class="sp"></span>Submitting...';
+  fetch(GAS_URL,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({name:n,phone:p,area:a,visitDate:d,visitTime:t,requirement:r}).toString()})
+  .then(function(r){return r.json()})
+  .then(function(data){
+    if(data.success){document.getElementById('ffields').style.display='none';document.getElementById('sv').style.display='block'}
+    else{e('Something went wrong. Please try again.');sb.disabled=false;sb.innerHTML='Book Free Site Visit &rarr;'}
   })
-  .then(function(res) { return res.json(); })
-  .then(function(data) {
-    if (data.success) {
-      document.getElementById('cb').href = data.catalogueUrl || CATALOGUE_URL || '#';
-      document.getElementById('fv').style.display = 'none';
-      var s = document.getElementById('sv');
-      s.style.display = 'flex';
-    } else {
-      show_err('Something went wrong. Please try again.');
-      sb.disabled = false;
-      sb.innerHTML = '<div class="btn-shine"></div>Confirm Visit Booking';
-    }
-  })
-  .catch(function() {
-    show_err('Network error. Please check your connection and try again.');
-    sb.disabled = false;
-    sb.innerHTML = '<div class="btn-shine"></div>Confirm Visit Booking';
-  });
+  .catch(function(){e('Network error. Please try again.');sb.disabled=false;sb.innerHTML='Book Free Site Visit &rarr;'});
 }
-
-function v(id) { return document.getElementById(id).value.trim(); }
-function show_err(msg) {
-  var el = document.getElementById('em');
-  el.textContent = msg; el.style.display = 'block';
-}
-function resetForm() {
-  ['fn','fp','fa','fd','ft','fr'].forEach(function(id){ document.getElementById(id).value=''; });
-  document.getElementById('sv').style.display = 'none';
-  document.getElementById('fv').style.display = 'block';
-  document.getElementById('sb').disabled = false;
-  document.getElementById('sb').innerHTML = '<div class="btn-shine"></div>Confirm Visit Booking';
+function g(id){return document.getElementById(id).value.trim()}
+function e(msg){var el=document.getElementById('em');el.textContent=msg;el.style.display='block'}
+function rf(){
+  ['fn','fp','fa','fd','ft','fr'].forEach(function(id){document.getElementById(id).value=''});
+  document.getElementById('sv').style.display='none';
+  document.getElementById('ffields').style.display='block';
+  document.getElementById('sb').disabled=false;
+  document.getElementById('sb').innerHTML='Book Free Site Visit &rarr;';
 }
 </script>
 </body>
