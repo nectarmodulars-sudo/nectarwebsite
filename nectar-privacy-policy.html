@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Nectar Modular Kitchen & Furniture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #FAF7F2;
+      --warm:     #F3EDE3;
+      --gold:     #C9A96E;
+      --gold-lt:  #E8D5B0;
+      --dark:     #1A1410;
+      --brown:    #3D2B1F;
+      --mid:      #6B5744;
+      --muted:    #9E8A7A;
+      --border:   #E2D5C5;
+      --white:    #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      box-shadow: 0 2px 20px rgba(26,20,16,.06);
+    }
+    .nav-logo {
+      display: flex; flex-direction: column; line-height: 1;
+      text-decoration: none;
+    }
+    .nav-logo .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--brown);
+      letter-spacing: 3px; text-transform: uppercase;
+    }
+    .nav-logo .tagline {
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold); margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--mid); transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--white);
+      border-radius: 2px; padding: 10px 22px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--brown); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--brown);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,169,110,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 80% at 10% 80%, rgba(201,169,110,.08) 0%, transparent 60%);
+      color: var(--white);
+      padding: 90px 48px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent, transparent 60px,
+        rgba(255,255,255,.015) 60px, rgba(255,255,255,.015) 61px
+      );
+    }
+    .hero-inner { position: relative; max-width: 700px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 32px; height: 1px; background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -0.5px; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .hero p {
+      font-size: 15px; color: rgba(255,255,255,.65);
+      max-width: 520px; margin-bottom: 32px;
+    }
+    .hero-meta {
+      display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .hero-meta-item .label {
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+    }
+    .hero-meta-item .value {
+      font-size: 13px; color: rgba(255,255,255,.8);
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      max-width: 1080px;
+      margin: 52px auto;
+      gap: 36px;
+      padding: 0 32px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky; top: 80px;
+    }
+    .sidebar-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 16px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+    .sidebar-nav a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 14px; border-radius: 4px;
+      font-size: 13px; font-weight: 400;
+      color: var(--mid); text-decoration: none;
+      transition: all .15s; border-left: 2px solid transparent;
+    }
+    .sidebar-nav a:hover {
+      background: var(--warm); color: var(--brown);
+      border-left-color: var(--gold);
+    }
+    .sidebar-nav a.active {
+      background: var(--warm); color: var(--brown);
+      border-left-color: var(--gold); font-weight: 500;
+    }
+    .sidebar-nav .sn-num {
+      font-size: 10px; color: var(--gold);
+      font-weight: 600; min-width: 18px;
+    }
+
+    .sidebar-contact {
+      margin-top: 28px;
+      background: var(--brown);
+      border-radius: 6px; padding: 20px;
+      color: rgba(255,255,255,.8);
+    }
+    .sidebar-contact .sc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px; color: var(--white); margin-bottom: 8px;
+    }
+    .sidebar-contact p { font-size: 12px; line-height: 1.6; margin-bottom: 14px; }
+    .sidebar-contact a {
+      display: block; text-align: center;
+      background: var(--gold); color: var(--white);
+      border-radius: 3px; padding: 9px 16px;
+      font-size: 11px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      transition: background .2s;
+    }
+    .sidebar-contact a:hover { background: #b8924a; }
+
+    /* ── SECTIONS ── */
+    .main { display: flex; flex-direction: column; gap: 4px; }
+
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px; overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .section:hover { box-shadow: 0 4px 24px rgba(61,43,31,.08); }
+
+    .section-head {
+      display: flex; align-items: center; gap: 16px;
+      padding: 26px 32px 22px;
+      border-bottom: 1px solid var(--border);
+      background: var(--warm);
+    }
+    .sec-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 300;
+      color: var(--gold); line-height: 1; min-width: 36px;
+    }
+    .sec-head-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--brown); margin-bottom: 2px;
+    }
+    .sec-head-text p { font-size: 12px; color: var(--muted); letter-spacing: 0.3px; }
+
+    .section-body { padding: 28px 32px; }
+    .section-body p { color: #4A3728; margin-bottom: 14px; font-size: 14px; }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* Policy list */
+    .p-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+    .p-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 16px; background: var(--cream);
+      border: 1px solid var(--border); border-radius: 4px;
+      font-size: 14px; color: #4A3728;
+    }
+    .p-list li .dot {
+      width: 6px; height: 6px; background: var(--gold);
+      border-radius: 50%; margin-top: 7px; flex-shrink: 0;
+    }
+
+    /* Info grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px,1fr));
+      gap: 12px; margin: 16px 0;
+    }
+    .info-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px 16px; text-align: center;
+    }
+    .info-card .ic-icon { font-size: 24px; margin-bottom: 10px; }
+    .info-card .ic-label { font-size: 13px; font-weight: 500; color: var(--brown); }
+    .info-card .ic-sub { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+    /* Rights grid */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px,1fr));
+      gap: 14px; margin-top: 16px;
+    }
+    .right-item {
+      background: var(--warm); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px;
+    }
+    .right-item .ri-icon { font-size: 20px; margin-bottom: 8px; }
+    .right-item .ri-title { font-size: 13px; font-weight: 600; color: var(--brown); margin-bottom: 4px; }
+    .right-item .ri-desc { font-size: 12px; color: var(--mid); line-height: 1.5; }
+
+    /* Contact box */
+    .contact-strip {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--brown), #2A1A10);
+      border-radius: 8px; padding: 28px 28px;
+      margin-top: 8px; align-items: center;
+    }
+    .cs-icon { font-size: 36px; }
+    .cs-text { flex: 1; min-width: 200px; }
+    .cs-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; color: var(--white); margin-bottom: 4px;
+    }
+    .cs-text p { font-size: 13px; color: rgba(255,255,255,.65); margin-bottom: 14px; }
+    .cs-details { display: flex; gap: 20px; flex-wrap: wrap; }
+    .cs-detail {
+      display: flex; flex-direction: column;
+      background: rgba(255,255,255,.08); border-radius: 4px;
+      padding: 10px 16px;
+    }
+    .cs-detail .cd-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+    .cs-detail .cd-val { font-size: 13px; color: var(--white); margin-top: 2px; }
+
+    /* Update badge */
+    .update-note {
+      display: flex; align-items: center; gap: 12px;
+      background: #FFF8EE; border: 1px solid var(--gold-lt);
+      border-radius: 6px; padding: 14px 18px;
+      font-size: 13px; color: var(--mid); margin-bottom: 4px;
+    }
+    .update-note .un-icon { font-size: 18px; flex-shrink: 0; }
+
+    /* Footer */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,.45);
+      text-align: center; padding: 40px 32px;
+      font-size: 12px; line-height: 2;
+    }
+    footer .f-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 6px;
+    }
+    footer a { color: var(--gold-lt); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: var(--gold); }
+
+    /* Responsive */
+    @media (max-width: 780px) {
+      nav { padding: 0 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .hero { padding: 60px 24px; }
+      .layout { grid-template-columns: 1fr; padding: 0 16px; }
+      .sidebar { display: none; }
+      .section-body, .section-head { padding: 20px; }
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section { animation: fadeUp .4s ease both; }
+    .section:nth-child(1)  { animation-delay: .05s; }
+    .section:nth-child(2)  { animation-delay: .10s; }
+    .section:nth-child(3)  { animation-delay: .15s; }
+    .section:nth-child(4)  { animation-delay: .20s; }
+    .section:nth-child(5)  { animation-delay: .25s; }
+    .section:nth-child(6)  { animation-delay: .30s; }
+    .section:nth-child(7)  { animation-delay: .35s; }
+    .section:nth-child(8)  { animation-delay: .40s; }
+    .section:nth-child(9)  { animation-delay: .45s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://nectarmodulars.com">
+    <span class="wordmark">Nectar</span>
+    <span class="tagline">Modular Kitchen &amp; Furniture</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://nectarmodulars.com/#services">Services</a>
+    <a href="https://nectarmodulars.com/#projects">Projects</a>
+    <a href="https://nectarmodulars.com/#process">Process</a>
+    <a href="https://nectarmodulars.com/#reviews">Reviews</a>
+    <a href="https://nectarmodulars.com/#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="https://nectarmodulars.com/#contact">Free Consultation</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Legal &amp; Privacy</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p>At Nectar, your trust is as important as the quality of our craftsmanship. Here's exactly how we handle your personal information.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">Effective Date</span>
+        <span class="value">May 30, 2025</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Business</span>
+        <span class="value">Nectar Modular Kitchen &amp; Furniture</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Location</span>
+        <span class="value">Pune, Maharashtra, India</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-label">Contents</div>
+    <nav class="sidebar-nav">
+      <a href="#collect" class="active"><span class="sn-num">01</span>Information We Collect</a>
+      <a href="#use"><span class="sn-num">02</span>How We Use It</a>
+      <a href="#share"><span class="sn-num">03</span>Sharing Your Data</a>
+      <a href="#cookies"><span class="sn-num">04</span>Cookies</a>
+      <a href="#whatsapp"><span class="sn-num">05</span>WhatsApp &amp; Calls</a>
+      <a href="#retention"><span class="sn-num">06</span>Data Retention</a>
+      <a href="#security"><span class="sn-num">07</span>Security</a>
+      <a href="#rights"><span class="sn-num">08</span>Your Rights</a>
+      <a href="#changes"><span class="sn-num">09</span>Policy Changes</a>
+    </nav>
+
+    <div class="sidebar-contact">
+      <div class="sc-title">Have a Question?</div>
+      <p>Reach out to us about your data or to book a free design consultation.</p>
+      <a href="https://nectarmodulars.com/#contact">Contact Nectar →</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="update-note">
+      <span class="un-icon">📋</span>
+      This policy applies to Nectar Modular Kitchen &amp; Furniture and governs all personal information collected through our website, WhatsApp, phone, and in-person consultations.
+    </div>
+
+    <!-- 01 -->
+    <div class="section" id="collect">
+      <div class="section-head">
+        <div class="sec-num">01</div>
+        <div class="sec-head-text">
+          <h2>Information We Collect</h2>
+          <p>Data we gather to serve you better</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>When you interact with Nectar — through our website, WhatsApp, phone, or in person — we may collect the following types of information to understand your needs and provide the best modular kitchen and furniture solutions.</p>
+        <div class="info-grid">
+          <div class="info-card"><div class="ic-icon">👤</div><div class="ic-label">Contact Details</div><div class="ic-sub">Name, phone number, email address</div></div>
+          <div class="info-card"><div class="ic-icon">🏠</div><div class="ic-label">Home / Project Info</div><div class="ic-sub">Address, flat size, layout, design preferences</div></div>
+          <div class="info-card"><div class="ic-icon">💬</div><div class="ic-label">Consultation Notes</div><div class="ic-sub">Requirements shared via call, WhatsApp, or visit</div></div>
+          <div class="info-card"><div class="ic-icon">📸</div><div class="ic-label">Photos / Plans</div><div class="ic-sub">Floor plans or images you share with us</div></div>
+          <div class="info-card"><div class="ic-icon">💳</div><div class="ic-label">Payment Info</div><div class="ic-sub">Billing details for orders and invoices</div></div>
+          <div class="info-card"><div class="ic-icon">🖥️</div><div class="ic-label">Usage Data</div><div class="ic-sub">Pages visited, device type, browser info</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="section" id="use">
+      <div class="section-head">
+        <div class="sec-num">02</div>
+        <div class="sec-head-text">
+          <h2>How We Use Your Information</h2>
+          <p>Purposes for which your data is used</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>Every piece of information we collect is used to deliver a seamless, personalised experience — from your first enquiry to the final installation of your dream kitchen.</p>
+        <ul class="p-list">
+          <li><div class="dot"></div><div>Prepare personalised design proposals, 3D renders, and accurate cost estimates for your project.</div></li>
+          <li><div class="dot"></div><div>Schedule and coordinate site visits, measurements, and follow-up consultations.</div></li>
+          <li><div class="dot"></div><div>Process orders, invoices, and track project milestones through to delivery and installation.</div></li>
+          <li><div class="dot"></div><div>Send you updates about your project status, new collections, or promotional offers (with your consent).</div></li>
+          <li><div class="dot"></div><div>Improve our website, services, and the overall customer experience.</div></li>
+          <li><div class="dot"></div><div>Comply with applicable Indian laws and maintain business records.</div></li>
+        </ul>
+        <p>We do <strong>not</strong> sell, rent, or trade your personal information to any third party for marketing purposes.</p>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="section" id="share">
+      <div class="section-head">
+        <div class="sec-num">03</div>
+        <div class="sec-head-text">
+          <h2>Sharing Your Information</h2>
+          <p>When and with whom we may share data</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>We share your information only when necessary to complete your project or as required by law. We never share data for advertising or profit.</p>
+        <ul class="p-list">
+          <li><div class="dot"></div><div><strong>Trusted Vendors &amp; Craftsmen:</strong> Carpenters, hardware suppliers, and contractors who work on your project under confidentiality.</div></li>
+          <li><div class="dot"></div><div><strong>Logistics Partners:</strong> Delivery teams who need your address and contact details for installation coordination.</div></li>
+          <li><div class="dot"></div><div><strong>Payment Processors:</strong> Banks or payment gateways for processing transactions securely.</div></li>
+          <li><div class="dot"></div><div><strong>Legal Requirements:</strong> When required by Indian law, court order, or government authority.</div></li>
+        </ul>
+        <p>All third parties are required to keep your information confidential and may only use it for the specific purpose shared.</p>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="section" id="cookies">
+      <div class="section-head">
+        <div class="sec-num">04</div>
+        <div class="sec-head-text">
+          <h2>Cookies &amp; Website Tracking</h2>
+          <p>How our website uses tracking technologies</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>Our website at <strong>nectarmodulars.com</strong> uses cookies and similar technologies to improve performance and understand visitor behaviour.</p>
+        <ul class="p-list">
+          <li><div class="dot"></div><div><strong>Essential Cookies:</strong> Required for the website to function correctly, including the contact and enquiry forms.</div></li>
+          <li><div class="dot"></div><div><strong>Analytics Cookies:</strong> Tools like Google Analytics help us understand which pages are most visited so we can improve content.</div></li>
+          <li><div class="dot"></div><div><strong>Marketing Pixels:</strong> We may use Facebook or Google pixels to show relevant ads to people who have visited our website.</div></li>
+        </ul>
+        <p>You can disable cookies through your browser settings at any time. Note that some site features may not work correctly without essential cookies.</p>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="section" id="whatsapp">
+      <div class="section-head">
+        <div class="sec-num">05</div>
+        <div class="sec-head-text">
+          <h2>WhatsApp &amp; Phone Communication</h2>
+          <p>How we handle conversations outside the website</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>Much of our client communication happens over WhatsApp and phone. When you contact us through these channels:</p>
+        <ul class="p-list">
+          <li><div class="dot"></div><div>Your name, phone number, and conversation details may be saved internally to manage your project.</div></li>
+          <li><div class="dot"></div><div>Photos, floor plans, or documents you share on WhatsApp are used only for your project and not shared elsewhere.</div></li>
+          <li><div class="dot"></div><div>We may send you project updates, reminders, or offers via WhatsApp. You may opt out at any time by informing us.</div></li>
+          <li><div class="dot"></div><div>WhatsApp communications are subject to Meta's own privacy policy as the platform provider.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="section" id="retention">
+      <div class="section-head">
+        <div class="sec-num">06</div>
+        <div class="sec-head-text">
+          <h2>Data Retention</h2>
+          <p>How long we keep your information</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>We retain your information for as long as is necessary to fulfil the purposes described in this policy, or as required under Indian law.</p>
+        <ul class="p-list">
+          <li><div class="dot"></div><div>Project and client records are retained for up to <strong>7 years</strong> for warranty, legal, and tax purposes.</div></li>
+          <li><div class="dot"></div><div>Enquiries that did not convert into projects are kept for up to <strong>1 year</strong> for follow-up purposes.</div></li>
+          <li><div class="dot"></div><div>Marketing communication preferences (opt-in/opt-out) are maintained indefinitely unless you request deletion.</div></li>
+          <li><div class="dot"></div><div>Website analytics data is typically retained for <strong>26 months</strong> as per Google Analytics defaults.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="section" id="security">
+      <div class="section-head">
+        <div class="sec-num">07</div>
+        <div class="sec-head-text">
+          <h2>Security of Your Information</h2>
+          <p>How we protect your data</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>We take the security of your personal information seriously and implement appropriate measures to protect it from unauthorised access, loss, or misuse.</p>
+        <ul class="p-list">
+          <li><div class="dot"></div><div>Our website uses HTTPS (SSL encryption) to secure all data transmitted between your browser and our servers.</div></li>
+          <li><div class="dot"></div><div>Access to client information is restricted to authorised Nectar team members only.</div></li>
+          <li><div class="dot"></div><div>Physical documents containing client data are stored securely at our office in Pune.</div></li>
+          <li><div class="dot"></div><div>In the event of a data breach, we will notify affected clients as required by applicable law.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="section" id="rights">
+      <div class="section-head">
+        <div class="sec-num">08</div>
+        <div class="sec-head-text">
+          <h2>Your Rights</h2>
+          <p>Control over your personal information</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>You have the right to know and control how your personal data is used. You may exercise any of the following rights by contacting us directly.</p>
+        <div class="rights-grid">
+          <div class="right-item"><div class="ri-icon">👁️</div><div class="ri-title">Access</div><div class="ri-desc">Request a copy of all personal data we hold about you.</div></div>
+          <div class="right-item"><div class="ri-icon">✏️</div><div class="ri-title">Correct</div><div class="ri-desc">Ask us to update or correct inaccurate information.</div></div>
+          <div class="right-item"><div class="ri-icon">🗑️</div><div class="ri-title">Delete</div><div class="ri-desc">Request deletion of your data, subject to legal obligations.</div></div>
+          <div class="right-item"><div class="ri-icon">🔕</div><div class="ri-title">Opt-Out</div><div class="ri-desc">Unsubscribe from marketing messages at any time.</div></div>
+          <div class="right-item"><div class="ri-icon">📦</div><div class="ri-title">Portability</div><div class="ri-desc">Receive your data in a usable, portable format.</div></div>
+          <div class="right-item"><div class="ri-icon">🚫</div><div class="ri-title">Object</div><div class="ri-desc">Object to certain types of processing of your data.</div></div>
+        </div>
+        <p style="margin-top:16px;">To exercise any of these rights, please email or WhatsApp us. We will respond within <strong>30 days</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="section" id="changes">
+      <div class="section-head">
+        <div class="sec-num">09</div>
+        <div class="sec-head-text">
+          <h2>Changes to This Policy</h2>
+          <p>How we notify you of updates</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, services, or applicable law. When we make material changes, we will update the effective date at the top of this page.</p>
+        <p>We encourage you to review this policy periodically. Continued use of our website or services after any update constitutes your acceptance of the revised policy.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-strip">
+      <div class="cs-icon">🏡</div>
+      <div class="cs-text">
+        <h3>Nectar Modular Kitchen &amp; Furniture</h3>
+        <p>Pune's trusted modular furniture brand. Questions about your data? We're here to help.</p>
+        <div class="cs-details">
+          <div class="cs-detail">
+            <span class="cd-label">Website</span>
+            <span class="cd-val">nectarmodulars.com</span>
+          </div>
+          <div class="cs-detail">
+            <span class="cd-label">Location</span>
+            <span class="cd-val">Pune, Maharashtra</span>
+          </div>
+          <div class="cs-detail">
+            <span class="cd-label">Policy Version</span>
+            <span class="cd-val">May 2025 · v1.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">Nectar</div>
+  <div>Modular Kitchen &amp; Furniture · Pune, Maharashtra, India</div>
+  <div style="margin-top:10px;">
+    <a href="https://nectarmodulars.com">Home</a>
+    <a href="https://nectarmodulars.com/#services">Services</a>
+    <a href="https://nectarmodulars.com/#projects">Projects</a>
+    <a href="https://nectarmodulars.com/#contact">Contact</a>
+  </div>
+  <div style="margin-top:14px;">© 2025 Nectar Modular Kitchen &amp; Furniture. All rights reserved.</div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
